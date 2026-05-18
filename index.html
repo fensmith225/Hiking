@@ -44,7 +44,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div id="wnav"></div>
 <div id="mc"></div>
 <script>
-var SK='hk12s',NK='hk12n',mem={};
+var SK='hk13s',NK='hk13n',mem={};
 function sg(k){try{var v=localStorage.getItem(k);if(v!=null)return v;}catch(e){}return mem[k]||null;}
 function ss(k,v){try{localStorage.setItem(k,v);}catch(e){}mem[k]=v;}
 function sd(k){try{localStorage.removeItem(k);}catch(e){}delete mem[k];}
@@ -52,77 +52,77 @@ var S={},N={};
 function load(){try{S=JSON.parse(sg(SK)||'{}')}catch(e){S={}}try{N=JSON.parse(sg(NK)||'{}')}catch(e){N={}}}
 function saveS(){ss(SK,JSON.stringify(S));}
 function saveN(){ss(NK,JSON.stringify(N));}
-var TAGS={strength:'background:#FAEEDA;color:#633806',hiit:'background:#EEEDFE;color:#3C3489',step:'background:#E1F5EE;color:#085041',hill:'background:#FAECE7;color:#712B13',hike:'background:#E6F1FB;color:#0C447C',yoga:'background:#EAF3DE;color:#27500A',rest:'background:#F1EFE8;color:#444441',walk:'background:#F1EFE8;color:#444441',travel:'background:#FAECE7;color:#712B13',swim:'background:#E1F5EE;color:#085041'};
+var TAGS={strength:'background:#FAEEDA;color:#633806',hiit:'background:#EEEDFE;color:#3C3489',step:'background:#E1F5EE;color:#085041',hill:'background:#FAECE7;color:#712B13',hike:'background:#E6F1FB;color:#0C447C',yoga:'background:#EAF3DE;color:#27500A',rest:'background:#F1EFE8;color:#444441',walk:'background:#F1EFE8;color:#444441',travel:'background:#FAECE7;color:#712B13',swim:'background:#E1F5EE;color:#085041',pt:'background:#FEF3E2;color:#92400E'};
 var W=[
 {id:'ov',nav:'Overview',label:'Overview',type:'overview'},
-{id:'w1',nav:'W1',label:'Week 1',phase:'Phase 1 - Building base',dates:'w/c 18 May',title:'Introduce step sessions',note:'Keep everything you already do. Add step machine on Tuesdays and a hilly walk after your big Saturday.',s:[
+{id:'w1',nav:'W1',label:'Week 1',phase:'Phase 1 - Building base',dates:'w/c 18 May',title:'Introduce step sessions',note:'Keep everything you already do. Tuesday gets step machine, Saturday adds a hike after your usual sessions.',s:[
 {d:'Mon eve',n:'Strength',t:'strength',x:'Your usual strength session. Add weighted step-ups and Bulgarian split squats if not already.'},
-{d:'Tue',n:'Step machine',t:'step',x:'2x15 min on stair machine. Moderate pace, steady effort. Your new Tuesday add-on.'},
+{d:'Tue',n:'Step machine + hill',t:'step',x:'2x15 min on stair machine. Moderate pace, steady effort. Add a hill walk if time allows.'},
 {d:'Wed eve',n:'HIIT',t:'hiit',x:'Your usual HIIT session.'},
-{d:'Thu eve',n:'HIIT',t:'hiit',x:'Your usual HIIT session.'},
-{d:'Fri',n:'Easy walk or rest',t:'walk',x:'Recovery day. Commute walking is plenty.'},
-{d:'Sat',n:'HIIT + strength + hilly walk',t:'hiit',x:'Big Saturday as usual, then 60 min hilly walk at Crystal Palace or One Tree Hill.'},
-{d:'Sun',n:'Yoga + stair climb',t:'yoga',x:'Yoga as usual. Add 10 min stair climbing at easy pace if time allows.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Use the note box to log what you did.'},
+{d:'Fri',n:'Rest or easy walk',t:'walk',x:'Recovery day. Commute walking is plenty.'},
+{d:'Sat',n:'HIIT + strength + hilly walk',t:'hiit',x:'Big Saturday as usual, then 60 min hilly walk at Crystal Palace or One Tree Hill. Step machine if time allows.'},
+{d:'Sun',n:'Yoga + light step',t:'yoga',x:'Yoga as usual. Add 10 min easy stair climbing if time allows.'},
 ]},
-{id:'w2',nav:'W2',label:'Week 2',phase:'Phase 1 - Building base',dates:'w/c 25 May',title:'Extend step sessions',note:'Step sessions grow to 20 min. Everything else stays the same.',s:[
+{id:'w2',nav:'W2',label:'Week 2',phase:'Phase 1 - Building base',dates:'w/c 25 May',title:'Extend step sessions',note:'Step sessions grow to 20 min. Tuesday is your main elevation day.',s:[
 {d:'Mon eve',n:'Strength',t:'strength',x:'Add calf raises and glute bridges - both protect knees on descents.'},
-{d:'Tue',n:'Step machine',t:'step',x:'2x20 min. Increase resistance slightly from week 1.'},
+{d:'Tue',n:'Step machine + hill',t:'step',x:'2x20 min step machine. Then a hill walk or repeats if legs allow.'},
 {d:'Wed eve',n:'HIIT',t:'hiit',x:'Your usual HIIT.'},
-{d:'Thu eve',n:'HIIT',t:'hiit',x:'Your usual HIIT.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Use the note box to log what you did.'},
 {d:'Fri',n:'Rest or easy walk',t:'rest',x:'Let legs recover before Saturday.'},
-{d:'Sat',n:'HIIT + strength + hike',t:'hike',x:'Big Saturday then a proper hike - aim for 12-14 km with some ascent.'},
-{d:'Sun',n:'Yoga + stair climb',t:'yoga',x:'Yoga as usual. 10-15 min stair climbing if legs allow.'},
+{d:'Sat',n:'HIIT + strength + hike + step',t:'hike',x:'Big Saturday then a proper hike 12-14 km with some ascent. Step machine if time allows before or after.'},
+{d:'Sun',n:'Yoga + light step',t:'yoga',x:'Yoga as usual. 10-15 min stair climbing if legs allow.'},
 ]},
-{id:'w3',nav:'W3',label:'Week 3',phase:'Phase 1 - Building base',dates:'w/c 1 Jun',title:'Add hill session',note:'Thursday becomes a dedicated hill session. Step builds to 25 min.',s:[
+{id:'w3',nav:'W3',label:'Week 3',phase:'Phase 1 - Building base',dates:'w/c 1 Jun',title:'Build to 25 min step',note:'Step and hill on Tuesday builds to 25 min. Saturday hike gets longer.',s:[
 {d:'Mon eve',n:'Strength',t:'strength',x:'Weighted step-ups on a bench (3x12 each leg). Lateral band walks. Single-leg calf raises.'},
-{d:'Tue',n:'Step machine',t:'step',x:'2x25 min. Increase resistance. Keep pace without holding the rails.'},
+{d:'Tue',n:'Step machine + hill',t:'step',x:'2x25 min step machine. Then 30 min hill repeats - go up and down a slope 4-6 times.'},
 {d:'Wed eve',n:'HIIT',t:'hiit',x:'HIIT as usual.'},
-{d:'Thu eve',n:'Hill session',t:'hill',x:'30-40 min hill repeats. Find a slope and go up and down 4-6 times or run a hilly loop.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Use the note box to log what you did.'},
 {d:'Fri',n:'Rest or easy walk',t:'rest',x:'Recovery. Legs need it before a big Saturday.'},
-{d:'Sat',n:'HIIT + strength + hike',t:'hike',x:'Saturday sessions then hike 14-16 km. One Tree Hill laps or North Downs.'},
-{d:'Sun',n:'Yoga + stair climb',t:'yoga',x:'Yoga. 15 min stair climb, easy pace.'},
+{d:'Sat',n:'HIIT + strength + hike + step',t:'hike',x:'Saturday sessions then hike 14-16 km. Step machine session too if time. One Tree Hill laps or North Downs.'},
+{d:'Sun',n:'Yoga + light step',t:'yoga',x:'Yoga. 15 min stair climb, easy pace.'},
 ]},
-{id:'w4',nav:'W4',label:'Week 4',phase:'Phase 1 - Building base',dates:'w/c 8 Jun',title:'Build to 30 min step',note:'Step sessions hit 30 min. Hill session gets longer. Saturday hike targets 250-300m ascent.',s:[
+{id:'w4',nav:'W4',label:'Week 4',phase:'Phase 1 - Building base',dates:'w/c 8 Jun',title:'Build to 30 min step',note:'Step hits 30 min on Tuesday. Saturday hike targets 250-300m ascent.',s:[
 {d:'Mon eve',n:'Strength',t:'strength',x:'Heavy step-ups and split squats. Add weighted carries if possible.'},
-{d:'Tue',n:'Step machine',t:'step',x:'2x30 min. This is a significant milestone - keep going.'},
+{d:'Tue',n:'Step machine + hill',t:'step',x:'2x30 min step machine. Then 40 min hill repeats - this is your main elevation session.'},
 {d:'Wed eve',n:'HIIT',t:'hiit',x:'HIIT as usual.'},
-{d:'Thu eve',n:'Hill session',t:'hill',x:'40 min hill repeats. Longer reps, power-hike the ups, control the downs.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Use the note box to log what you did.'},
 {d:'Fri',n:'Rest or easy walk',t:'rest',x:'Recovery before big Saturday.'},
-{d:'Sat',n:'HIIT + strength + hike',t:'hike',x:'Saturday sessions then hike 16-18 km with 250-300m ascent.'},
-{d:'Sun',n:'Yoga + stair climb',t:'yoga',x:'Yoga. 15 min stair climb.'},
+{d:'Sat',n:'HIIT + strength + hike + step',t:'hike',x:'Saturday sessions then hike 16-18 km with 250-300m ascent. Step machine too if time.'},
+{d:'Sun',n:'Yoga + light step',t:'yoga',x:'Yoga. 15 min stair climb.'},
 ]},
-{id:'w5',nav:'W5',label:'Week 5',phase:'Phase 1 - Building base',dates:'w/c 15 Jun',title:'Consolidate',note:'Hold the step at 30 min but increase resistance. Add rucksack to Saturday hike for first time.',s:[
+{id:'w5',nav:'W5',label:'Week 5',phase:'Phase 1 - Building base',dates:'w/c 15 Jun',title:'Consolidate and add rucksack',note:'Hold the step at 30 min but increase resistance. First rucksack on Saturday hike.',s:[
 {d:'Mon eve',n:'Strength',t:'strength',x:'Your usual hiking-focused strength session.'},
-{d:'Tue',n:'Step machine',t:'step',x:'2x30 min. Increase resistance from last week. This should feel harder.'},
+{d:'Tue',n:'Step machine + hill',t:'step',x:'2x30 min step machine, higher resistance. Then 40 min hill repeats.'},
 {d:'Wed eve',n:'HIIT',t:'hiit',x:'HIIT as usual.'},
-{d:'Thu eve',n:'Hill session',t:'hill',x:'45 min hill repeats.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Use the note box to log what you did.'},
 {d:'Fri',n:'Rest',t:'rest',x:'Rest. Big Saturday ahead.'},
-{d:'Sat',n:'HIIT + strength + hike with rucksack',t:'hike',x:'First rucksack hike - just 3-4 kg to start. 16-18 km. Notice how the weight changes everything.'},
-{d:'Sun',n:'Yoga + stair climb',t:'yoga',x:'Yoga. 20 min stair climb.'},
+{d:'Sat',n:'HIIT + strength + hike with rucksack',t:'hike',x:'First rucksack hike - just 3-4 kg to start. 16-18 km. Step machine if time. Notice how the weight changes everything.'},
+{d:'Sun',n:'Yoga + light step',t:'yoga',x:'Yoga. 20 min stair climb.'},
 ]},
-{id:'w6',nav:'W6',label:'Week 6',phase:'Phase 1 - Building base',dates:'w/c 22 Jun',title:'Build step to 35 min',note:'Step sessions push to 35 min. Rucksack weight increases to 5 kg.',s:[
+{id:'w6',nav:'W6',label:'Week 6',phase:'Phase 1 - Building base',dates:'w/c 22 Jun',title:'Build step to 35 min',note:'Step pushes to 35 min on Tuesday. Rucksack increases to 5 kg on Saturday.',s:[
 {d:'Mon eve',n:'Strength',t:'strength',x:'Weighted step-ups (heavier), Bulgarian split squats, calf raises, lateral band walks.'},
-{d:'Tue',n:'Step machine',t:'step',x:'35 min continuous. A real milestone. Do not hold the rails.'},
+{d:'Tue',n:'Step machine + hill',t:'step',x:'35 min continuous step machine. Then 45 min hill repeats. Do not hold the rails on the step.'},
 {d:'Wed eve',n:'HIIT',t:'hiit',x:'Full HIIT.'},
-{d:'Thu eve',n:'Hill session',t:'hill',x:'45-50 min hill repeats. Longer reps, shorter rest.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Use the note box to log what you did.'},
 {d:'Fri',n:'Rest',t:'rest',x:'Rest. Big Saturday ahead.'},
-{d:'Sat',n:'HIIT + strength + hike',t:'hike',x:'Saturday sessions then 18-20 km, 5 kg rucksack, aiming for 300-400m ascent. One Tree Hill laps.'},
-{d:'Sun',n:'Yoga + stair climb',t:'yoga',x:'Yoga. 20 min stair climb.'},
+{d:'Sat',n:'HIIT + strength + hike + step',t:'hike',x:'Saturday sessions then 18-20 km, 5 kg rucksack, 300-400m ascent. Step machine if time. One Tree Hill laps.'},
+{d:'Sun',n:'Yoga + light step',t:'yoga',x:'Yoga. 20 min stair climb.'},
 ]},
 {id:'w7',nav:'W7',label:'Week 7',phase:'Phase 1 - Deload',dates:'w/c 29 Jun',title:'Deload week',note:'Pull back. Legs need to recover before Norway. Keep moving but reduce intensity.',s:[
 {d:'Mon eve',n:'Strength (light)',t:'strength',x:'Reduce load by 20%. Focus on mobility - hip flexors, ankles, thoracic rotation.'},
-{d:'Tue',n:'Step machine (easy)',t:'step',x:'20 min easy. Just keep the habit.'},
+{d:'Tue',n:'Step machine (easy)',t:'step',x:'20 min easy step machine. Short easy hill walk if legs feel good.'},
 {d:'Wed eve',n:'HIIT (moderate)',t:'hiit',x:'Lighter effort - about 70% of usual intensity.'},
-{d:'Thu eve',n:'Easy hilly walk',t:'walk',x:'40 min brisk walk with some incline. Not a workout - just keep legs moving.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Let your PT know you are tapering for Norway. Use note box to log.'},
 {d:'Fri',n:'Rest',t:'rest',x:'Full rest or very easy walk.'},
 {d:'Sat',n:'Easy hike 10 km',t:'hike',x:'Easy, flat-ish. Test your boots and kit. Legs should feel fresh.'},
 {d:'Sun',n:'Yoga only',t:'yoga',x:'Yoga only - no stair climbing. Save the legs.'},
 ]},
-{id:'w8',nav:'W8',label:'Week 8',phase:'Phase 1 - Taper',dates:'w/c 6 Jul',title:'Taper - arrive fresh in Norway',note:'Last week before Norway. Keep sessions short and easy. Arrive fresh.',s:[
+{id:'w8',nav:'W8',label:'Week 8',phase:'Phase 1 - Taper',dates:'w/c 6 Jul',title:'Taper - arrive fresh in Norway',note:'Last week before Norway. Short and easy. Arrive fresh.',s:[
 {d:'Mon eve',n:'Strength (light)',t:'strength',x:'Very light session. Mobility only.'},
 {d:'Tue',n:'Step machine (easy)',t:'step',x:'15 min very easy. Just keep the legs moving.'},
 {d:'Wed eve',n:'HIIT (light)',t:'hiit',x:'60% effort only.'},
-{d:'Thu eve',n:'Easy walk',t:'walk',x:'30 min easy walk.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session - let them know you need to be fresh for Norway on Saturday. Use note box to log.'},
 {d:'Fri',n:'Rest',t:'rest',x:'Full rest. Pack your bag.'},
 {d:'Sat',n:'Short easy walk',t:'walk',x:'30 min flat walk. Legs should feel springy.'},
 {d:'Sun',n:'Yoga only',t:'yoga',x:'Yoga only. Save everything for Norway.'},
@@ -142,36 +142,36 @@ var W=[
 ]},
 {id:'w9',nav:'W9',label:'Week 9',phase:'Phase 2 - Pyrenees build',dates:'w/c 21 Jul',title:'Back to routine - ease in',note:'Norway and Norfolk will have left you well recovered. Ease back in with fresh legs.',s:[
 {d:'Mon eve',n:'Strength',t:'strength',x:'Return to full strength. Note how your legs feel post-Norway - likely noticeably stronger.'},
-{d:'Tue',n:'Step machine',t:'step',x:'2x25 min. Pick up where you left off. Add resistance if it feels easy.'},
+{d:'Tue',n:'Step machine + hill',t:'step',x:'2x25 min step machine. Then 40 min hill repeats. Pick up where you left off.'},
 {d:'Wed eve',n:'HIIT',t:'hiit',x:'Full HIIT back in.'},
-{d:'Thu eve',n:'Hill session',t:'hill',x:'40 min hill repeats. Notice how much easier this feels after Norway.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Use the note box to log what you did.'},
 {d:'Fri',n:'Rest',t:'rest',x:'Rest.'},
-{d:'Sat',n:'HIIT + strength + hike with rucksack',t:'hike',x:'5 kg rucksack. Hike 16 km. Back into it properly.'},
-{d:'Sun',n:'Yoga + stair climb',t:'yoga',x:'Yoga. 15 min stair climb.'},
+{d:'Sat',n:'HIIT + strength + hike with rucksack',t:'hike',x:'5 kg rucksack. Hike 16 km. Step machine if time. Back into it properly.'},
+{d:'Sun',n:'Yoga + light step',t:'yoga',x:'Yoga. 15 min stair climb.'},
 ]},
-{id:'w10',nav:'W10',label:'Week 10',phase:'Phase 2 - Pyrenees build',dates:'w/c 28 Jul',title:'Elevation focus',note:'Step sessions extend to 40 min continuous. Rucksack weight increases to 6-7 kg.',s:[
+{id:'w10',nav:'W10',label:'Week 10',phase:'Phase 2 - Pyrenees build',dates:'w/c 28 Jul',title:'Elevation focus',note:'Step extends to 40 min on Tuesday. Rucksack increases to 6-7 kg on Saturday.',s:[
 {d:'Mon eve',n:'Strength',t:'strength',x:'Weighted step-ups (heavier), Bulgarian split squats, calf raises, lateral band walks.'},
-{d:'Tue',n:'Step machine',t:'step',x:'40 min continuous. Increase resistance. Do not hold the rails - it should feel hard.'},
+{d:'Tue',n:'Step machine + hill',t:'step',x:'40 min continuous step machine. Then 45-50 min hill repeats. Do not hold the rails.'},
 {d:'Wed eve',n:'HIIT',t:'hiit',x:'Full HIIT.'},
-{d:'Thu eve',n:'Hill session',t:'hill',x:'45-50 min hill repeats. Longer reps, shorter rest. Power-hike the ups, control the downs.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Use the note box to log what you did.'},
 {d:'Fri',n:'Rest',t:'rest',x:'Rest. Big Saturday ahead.'},
-{d:'Sat',n:'HIIT + strength + long hike',t:'hike',x:'Saturday sessions then 18-20 km with 6-7 kg rucksack. One Tree Hill repeat laps - each ascent about 60m so 5-6 laps gives 300m+ gain.'},
-{d:'Sun',n:'Yoga + stair climb',t:'yoga',x:'Yoga. 20 min stair climb.'},
+{d:'Sat',n:'HIIT + strength + long hike',t:'hike',x:'Saturday sessions then 18-20 km with 6-7 kg rucksack. One Tree Hill repeat laps - each ascent about 60m so 5-6 laps gives 300m+ gain. Step machine if time.'},
+{d:'Sun',n:'Yoga + light step',t:'yoga',x:'Yoga. 20 min stair climb.'},
 ]},
-{id:'w11',nav:'W11',label:'Week 11',phase:'Phase 2 - Peak week',dates:'w/c 4 Aug',title:'Peak week - 600m hike',note:'Marker week. 45 min continuous step and a 600m ascent hike with 8 kg pack. If you can do this the Pyrenees is yours.',s:[
+{id:'w11',nav:'W11',label:'Week 11',phase:'Phase 2 - Peak week',dates:'w/c 4 Aug',title:'Peak week - 600m hike',note:'Marker week. 45 min continuous step on Tuesday and a 600m ascent hike with 8 kg pack on Saturday.',s:[
 {d:'Mon eve',n:'Strength',t:'strength',x:'Heavy step-ups and split squats. Last hard strength week.'},
-{d:'Tue',n:'Step machine - marker session',t:'step',x:'45 min continuous. Your benchmark. Note the resistance level and how you feel.'},
+{d:'Tue',n:'Step machine - marker session',t:'step',x:'45 min continuous step machine. Your benchmark. Note the resistance level and how you feel. Hill session after if legs allow.'},
 {d:'Wed eve',n:'HIIT',t:'hiit',x:'Full HIIT.'},
-{d:'Thu eve',n:'Hill session',t:'hill',x:'50 min. Longest hill session of the plan. Trail run or long hill repeats.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session as usual. Use the note box to log what you did.'},
 {d:'Fri',n:'Easy walk only',t:'walk',x:'Rest legs before Saturday peak hike.'},
 {d:'Sat',n:'HIIT + strength + peak hike',t:'hike',x:'Saturday sessions then 8 kg rucksack at One Tree Hill - 8-10 laps to hit 500-600m total gain. Your Pyrenees dress rehearsal.'},
-{d:'Sun',n:'Yoga + light stair climb',t:'yoga',x:'Gentle yoga. 10 min easy stair climbing only - recovery.'},
+{d:'Sun',n:'Yoga + light step',t:'yoga',x:'Gentle yoga. 10 min easy stair climbing only - recovery.'},
 ]},
 {id:'w12',nav:'W12',label:'Week 12',phase:'Phase 2 - Taper',dates:'w/c 18 Aug',title:'Taper - arrive fresh in Pyrenees',note:'Pull right back. You have built all the fitness you need. Arrive in Spain with fresh springy legs.',s:[
 {d:'Mon eve',n:'Strength (light)',t:'strength',x:'Mobility focus - hip flexors, ankles, glutes. No heavy loading.'},
-{d:'Tue',n:'Step machine (easy)',t:'step',x:'20 min easy. Keep the movement pattern, no effort.'},
+{d:'Tue',n:'Step machine (easy)',t:'step',x:'20 min easy step machine. Short easy walk after if you like.'},
 {d:'Wed eve',n:'HIIT (light)',t:'hiit',x:'60-70% effort only.'},
-{d:'Thu eve',n:'Easy walk',t:'walk',x:'40 min hilly walk. Comfortable pace.'},
+{d:'Thu eve',n:'Personal training (PT)',t:'pt',x:'Your PT session - let them know you need to be fresh for the Pyrenees. Use note box to log.'},
 {d:'Fri',n:'Rest',t:'rest',x:'Full rest. Start packing.'},
 {d:'Sat',n:'Easy 10 km hike',t:'hike',x:'Flat-ish, 2-3 kg pack. Legs should feel powerful. Enjoy feeling very fit.'},
 {d:'Sun',n:'Yoga only',t:'yoga',x:'Yoga. No stair climb. Save everything for the Pyrenees.'},
@@ -244,7 +244,7 @@ var sr=mk('div','display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-botto
 var sc1=mk('div','background:#fff;border-radius:10px;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);');sc1.appendChild(mk('div','font-size:11px;color:#6b6b66;font-weight:500;','Sessions done'));sc1.appendChild(mk('div','font-size:24px;font-weight:700;margin-top:2px;color:#185FA5;',''+d));
 var sc2=mk('div','background:#fff;border-radius:10px;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);');sc2.appendChild(mk('div','font-size:11px;color:#6b6b66;font-weight:500;','Progress'));sc2.appendChild(mk('div','font-size:24px;font-weight:700;margin-top:2px;color:#3B6D11;',''+p+'%'));
 sr.appendChild(sc1);sr.appendChild(sc2);mc.appendChild(sr);
-mc.appendChild(mk('div','border-radius:10px;padding:12px 14px;margin-bottom:12px;font-size:13px;line-height:1.6;background:#E6F1FB;color:#0C447C;','Your existing routine - strength Mon, HIIT Wed and Thu, big Saturday, yoga Sunday - is the backbone. This plan slots elevation training into the gaps.'));
+mc.appendChild(mk('div','border-radius:10px;padding:12px 14px;margin-bottom:12px;font-size:13px;line-height:1.6;background:#E6F1FB;color:#0C447C;','Mon: Strength. Tue: Step machine and hills. Wed: HIIT. Thu: PT. Fri: Rest. Sat: HIIT, strength and hike. Sun: Yoga and light step.'));
 mc.appendChild(mk('div','font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#6b6b66;margin-bottom:8px;','Key milestones'));
 [{icon:'&#9968;',bg:'#E6F1FB',h:'12 July - Norway (travel Sun 12)',p:'450m gain per day. 8 weeks of training behind you. You are ready.'},
 {icon:'&#129335;',bg:'#EAF3DE',h:'18-20 July - Norfolk retreat',p:'Active recovery. Vinyasa, yin, morning practice, swimming if available.'},
